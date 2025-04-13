@@ -1,0 +1,72 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-wrapper">
+            <div class="nav-tabs">
+                <div class="tab active" data-tab="login">Login</div>
+                <div class="tab" data-tab="register">Register</div>
+            </div>
+
+            <div class="form-container">
+                <!-- Login Form -->
+                <form id="loginForm" class="form active">
+                    <h2>Login</h2>
+                    <div class="form-group">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" id="loginUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div id="loginMessage" class="message"></div>
+                </form>
+
+                <!-- Register Form -->
+                <form id="registerForm" class="form">
+                    <h2>Register</h2>
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <input type="text" id="registerUsername" required minlength="3" maxlength="50">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerDocument">Upload Document</label>
+                        <input type="file" id="registerDocument" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerDate">Registration Date</label>
+                        <input type="date" id="registerDate" required>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                    <div id="registerMessage" class="message"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard" class="dashboard hidden">
+            <h2>Welcome, <span id="username"></span>!</h2>
+            <div class="profile-info">
+                <p>Registration Date: <span id="registrationDate"></span></p>
+                <p>Document: <a id="documentLink" href="#" target="_blank">View Document</a></p>
+            </div>
+            <button id="logoutBtn" class="btn">Logout</button>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
